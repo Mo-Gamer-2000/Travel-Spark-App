@@ -1,0 +1,35 @@
+@keyframes sparkles {
+  0% {
+    background-position: 100% 0%;
+  }
+  100% {
+    background-position: -100% 0%;
+  }
+}
+
+.fancy-title {
+  position: relative;
+  display: inline-block;
+  color: black;
+  background-size: 200% 100%;
+  background-position: 100% 0;
+  transition: color 0.3s ease-out;
+}
+
+.fancy-title:hover {
+  color: rgb(255, 255, 111);
+  text-shadow: 0 0 10px rgba(255, 255, 0, 0.8), 0 0 20px rgba(255, 255, 0, 0.6),
+    0 0 30px rgba(255, 255, 0, 0.4);
+}
+
+.text-title {
+  font-size: 2rem;
+}
+
+.text-title-md {
+  font-size: 2.5rem;
+}
+
+.text-title-lg {
+  font-size: 3rem;
+}
