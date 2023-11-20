@@ -12,14 +12,15 @@ const Header = ({ onPlaceChanged, onLoad }) => {
           </h1>
           <div className="flex items-center mt-2 md:mt-0">
             <FaSearch
-              className="text-white cursor-pointer"
+              className="text-white hover:text-blue-500 cursor-pointer duration-100"
               size={20}
               aria-label="Search"
             />
             <input
               type="text"
               placeholder="Search for places..."
-              className="px-3 py-2 md:px-4 md:py-2 lg:px-5 lg:py-2 bg-white text-gray-900 rounded-full outline-none focus:ring-2 focus:ring-blue-500 ml-2"
+              className="px-3 py-2 md:px-4 md:py-2 lg:px-5 lg:py-2 bg-white text-gray-900 rounded-lg outline-none focus:ring-2 focus:ring-blue-500 ml-2"
+              aria-label="Search"
             />
           </div>
         </div>
