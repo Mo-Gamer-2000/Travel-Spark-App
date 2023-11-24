@@ -7,6 +7,8 @@ import Rating from "@material-ui/lab/Rating";
 import useStyles from "./styles.js";
 
 const Map = () => {
+  const apiKey = process.env.REACT_APP_GOOGLE_API_KEY;
+
   const matches = useMediaQuery("(min-width:600px)");
   const classes = useStyles();
 
@@ -15,7 +17,7 @@ const Map = () => {
   return (
     <div className={classes.mapContainer}>
       <GoogleMapReact
-        bootstrapURLKeys={{ key: "" }}
+        bootstrapURLKeys={{ key: apiKey }}
         defaultCenter={coordinates}
         center={coordinates}
         defaultZoom={14}
