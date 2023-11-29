@@ -7,6 +7,7 @@ import List from "./components/List/List";
 import Map from "./components/Map/Map";
 import "./App.css";
 import Footer from "./components/Footer/Footer";
+import PlaceSearches from "./components/Places/PlaceSearches";
 
 const App = () => {
   const [places, setPlaces] = useState([]);
@@ -30,14 +31,13 @@ const App = () => {
           <List />
         </Grid>
         <Grid item xs={12} md={8}>
-          <Map
-            setCoordinates={setCoordinates}
-            setBounds={setBounds}
-            coordinates={coordinates}
-          />
+          <PlaceSearches />
         </Grid>
       </Grid>
       <Footer />
+      <div className="App">
+        <h1>Place Searches</h1>
+      </div>
     </>
   );
 };
