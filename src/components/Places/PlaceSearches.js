@@ -1,6 +1,8 @@
 import React, { useEffect } from "react";
 import "./placeSearches.css"; // Import the styles
 
+const apiKey = process.env.REACT_APP_GOOGLE_MAPS_API_KEY;
+
 const PlaceSearches = () => {
   useEffect(() => {
     let map;
@@ -83,7 +85,7 @@ const PlaceSearches = () => {
     if (!window.google || !window.google.maps) {
       // Load the Google Maps API with Places Library
       const script = document.createElement("script");
-      script.src = `https://maps.googleapis.com/maps/api/js?key=AIzaSyBB1wvm3RnPA8itQdnMQUlARBi4kxtuh6s&callback=initMap&libraries=places&v=weekly`; // Replace with your API key
+      script.src = `https://maps.googleapis.com/maps/api/js?key=${apiKey}&callback=initMap&libraries=places&v=weekly`;
       script.defer = true;
       document.body.appendChild(script);
 
