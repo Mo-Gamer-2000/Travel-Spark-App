@@ -97,7 +97,12 @@ const PlaceSearches = () => {
     }
   }, []);
 
-  return <div id="map" style={{ height: "100vh" }}></div>;
+  return (
+    <div
+      className="flex text-center justify-center px-2 py-3 my-3 md:ml-0 md:w-full lg:w-3/4 xl:w-4/5 2xl:w-3/4 md:mx-auto cursor-pointer outline"
+      id="map"
+    ></div>
+  );
 };
 
 export default PlaceSearches;

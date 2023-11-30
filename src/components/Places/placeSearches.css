@@ -2,15 +2,33 @@
 
 /* Always set the map height explicitly to define the size of the div element that contains the map. */
 #map {
-  height: 100vh;
+  height: auto;
+  width: 100%;
+  padding-top: 100%;
+  margin-left: 12px;
 }
 
 /* Optional: Makes the sample page fill the window. */
 html,
 body {
   height: 100%;
+  width: auto;
   margin: 0;
   padding: 0;
 }
 
-/* Add any additional styles you need for your application layout */
+/* Additional styling for larger screens */
+@media (min-width: 768px) {
+  #map {
+    height: 70vh;
+    padding-top: 70%;
+    margin-left: 12px;
+  }
+}
+
+@media (min-width: 1024px) {
+  #map {
+    height: 80vh;
+    padding-top: 80%;
+  }
+}

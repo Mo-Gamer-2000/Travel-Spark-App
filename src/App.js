@@ -4,7 +4,6 @@ import { CssBaseline, Grid } from "@material-ui/core";
 import { getPlacesData } from "./api/travelAdvisorAPI";
 import Header from "./components/Header/Header";
 import List from "./components/List/List";
-import Map from "./components/Map/Map";
 import "./App.css";
 import Footer from "./components/Footer/Footer";
 import PlaceSearches from "./components/Places/PlaceSearches";
@@ -35,9 +34,6 @@ const App = () => {
         </Grid>
       </Grid>
       <Footer />
-      <div className="App">
-        <h1>Place Searches</h1>
-      </div>
     </>
   );
 };
