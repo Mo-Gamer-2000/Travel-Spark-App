@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import "./placeSearches.css"; // Import the styles
+import "./placeSearches.css";
 
 const apiKey = process.env.REACT_APP_GOOGLE_MAPS_API_KEY;
 
