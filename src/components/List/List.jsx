@@ -13,22 +13,22 @@ import PlaceDetails from "../PlaceDetails/PlaceDetails";
 
 import useStyles from "./styles";
 
-const List = () => {
+const List = ({ places }) => {
   const classes = useStyles();
-  const [type, setType] = useState("restaurants"); // Fixed typo
+  const [type, setType] = useState("restaurants");
   const [rating, setRating] = useState("");
 
-  const places = [
-    { id: 1, name: "Gourmet Delights" },
-    { id: 2, name: "Tasty Bites" },
-    { id: 3, name: "Café Aroma" },
-    { id: 4, name: "Sugar Bliss" },
-    { id: 5, name: "Sizzling Grill" },
-    { id: 6, name: "Java Junction" },
-    { id: 7, name: "Sweet Sensations" },
-    { id: 8, name: "Burger Paradise" },
-    { id: 9, name: "Morning Brew Hub" },
-  ];
+  if (!places) {
+    return <CircularProgress />;
+  }
+
+  const filteredPlaces = places.filter((place) => {
+    const nameMatch = place.name.toLowerCase().includes(type.toLowerCase());
+    const ratingMatch =
+      rating === 0 || (place.rating && place.rating >= rating);
+
+    return nameMatch && ratingMatch;
+  });
 
   return (
     <div className={classes.container}>
@@ -67,7 +67,7 @@ const List = () => {
       </FormControl>
 
       <Grid container spacing={3} className={classes.list}>
-        {places?.map((place) => (
+        {filteredPlaces.map((place) => (
           <Grid item xs={12} sm={6} md={4} lg={3} key={place.id}>
             <PlaceDetails place={place} />
           </Grid>
